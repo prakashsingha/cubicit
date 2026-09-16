@@ -19,7 +19,7 @@
   var placeholder = " Placeholder until Cubic supplies original photography.";
   var cards =
     card(
-      "./staffing.html",
+      "staffing.html",
       "staffing",
       "Software Development Staffing",
       "High-caliber pool, rigorous screen, shortlists you can act on.",
@@ -27,7 +27,7 @@
       "Two software engineers reviewing work together at a desk." + placeholder
     ) +
     card(
-      "./software.html",
+      "software.html",
       "software",
       "App + Software Development",
       "UI/UX, engineering, audit, applied AI in the product.",
@@ -35,7 +35,7 @@
       "Team working on laptops around a table." + placeholder
     ) +
     card(
-      "./communication.html",
+      "communication.html",
       "communication",
       "Communication Services",
       "VoIP, custom rules, engagement, human-owned assist.",
@@ -43,7 +43,7 @@
       "Person taking a call with a headset." + placeholder
     ) +
     card(
-      "./automation.html",
+      "automation.html",
       "automation",
       "Automation &amp; AI",
       "Classic RPA plus workflow and supervised AI. Humans keep the exceptions.",
@@ -57,38 +57,38 @@
       '<header class="site-header border-b border-ash/70">' +
       '<div class="header-inner relative mx-auto max-w-6xl px-6 py-5">' +
       '<div class="header-bar">' +
-      '<a href="./index.html" class="font-display leading-none tracking-tightest" aria-label="Cubic Technologies home">' +
+      '<a href="index.html" class="font-display leading-none tracking-tightest" aria-label="Cubic Technologies home">' +
       '<span class="block text-[15px] font-semibold text-cta">CUBIC</span>' +
       '<span class="block text-[10px] font-medium uppercase tracking-[0.28em] text-ink-faint">Technologies</span>' +
       "</a>" +
       '<nav class="hidden items-center gap-8 text-[13px] font-medium text-ink-soft md:flex" aria-label="Primary">' +
       '<button type="button" class="practices-toggle' + (onPractice ? " is-current" : "") + '" aria-expanded="false" aria-controls="practices-panel">Practices</button>' +
-      '<a class="hover:text-ink" href="./employers.html"' + is("employers") + ">Employers</a>" +
-      '<a class="hover:text-ink" href="./talent.html"' + is("talent") + ">Talent</a>" +
-      '<a class="hover:text-ink" href="./about.html"' + is("about") + ">About</a>" +
+      '<a class="hover:text-ink" href="employers.html"' + is("employers") + ">Employers</a>" +
+      '<a class="hover:text-ink" href="talent.html"' + is("talent") + ">Talent</a>" +
+      '<a class="hover:text-ink" href="about.html"' + is("about") + ">About</a>" +
       "</nav>" +
       '<details class="header-menu md:hidden">' +
       '<summary class="header-menu-toggle">Menu</summary>' +
       '<div class="header-menu-panel">' +
-      '<a class="block px-4 py-2" href="./practices.html">All practices</a>' +
-      '<a class="block px-4 py-2" href="./staffing.html">Staffing</a>' +
-      '<a class="block px-4 py-2" href="./software.html">Software</a>' +
-      '<a class="block px-4 py-2" href="./communication.html">Communications</a>' +
-      '<a class="block px-4 py-2" href="./automation.html">Automation &amp; AI</a>' +
-      '<a class="block px-4 py-2" href="./employers.html">Employers</a>' +
-      '<a class="block px-4 py-2" href="./talent.html">Talent</a>' +
-      '<a class="block px-4 py-2" href="./about.html">About</a>' +
-      '<a class="header-menu-cta btn btn-fill mx-4 my-3 inline-block bg-cta px-4 py-2 text-[13px] font-medium text-white hover:bg-cta-hover" href="./contact.html"' +
+      '<a class="block px-4 py-2" href="practices.html">All practices</a>' +
+      '<a class="block px-4 py-2" href="staffing.html">Staffing</a>' +
+      '<a class="block px-4 py-2" href="software.html">Software</a>' +
+      '<a class="block px-4 py-2" href="communication.html">Communications</a>' +
+      '<a class="block px-4 py-2" href="automation.html">Automation &amp; AI</a>' +
+      '<a class="block px-4 py-2" href="employers.html">Employers</a>' +
+      '<a class="block px-4 py-2" href="talent.html">Talent</a>' +
+      '<a class="block px-4 py-2" href="about.html">About</a>' +
+      '<a class="header-menu-cta btn btn-fill mx-4 my-3 inline-block bg-cta px-4 py-2 text-[13px] font-medium text-white hover:bg-cta-hover" href="contact.html"' +
       is("contact") + ">Talk to Cubic</a>" +
       "</div></details>" +
-      '<a href="./contact.html" class="header-cta btn btn-fill bg-cta px-4 py-2 text-[13px] font-medium text-white hover:bg-cta-hover"' +
+      '<a href="contact.html" class="header-cta btn btn-fill bg-cta px-4 py-2 text-[13px] font-medium text-white hover:bg-cta-hover"' +
       is("contact") + ">Talk to Cubic</a>" +
       "</div>" +
       '<div id="practices-panel" class="practices-panel" hidden>' +
       '<div class="practices-grid">' + cards + "</div>" +
       '<div class="mt-3 flex items-center justify-end px-1">' +
       '<a class="text-[13px] font-medium text-ink underline decoration-ash underline-offset-4 hover:decoration-ink"' +
-      is("practices") + ' href="./practices.html">All practices</a>' +
+      is("practices") + ' href="practices.html">All practices</a>' +
       "</div></div></div></header>";
   }
 
@@ -103,16 +103,16 @@
       "<p>info@cubicit.net</p><p>contact@cubicit.net</p></div>" +
       '<div class="site-footer-links">' +
       '<div class="flex flex-col gap-2">' +
-      '<a class="hover:text-white" href="./staffing.html">Staffing</a>' +
-      '<a class="hover:text-white" href="./software.html">Software</a>' +
-      '<a class="hover:text-white" href="./communication.html">Communications</a>' +
-      '<a class="hover:text-white" href="./automation.html">Automation &amp; AI</a>' +
+      '<a class="hover:text-white" href="staffing.html">Staffing</a>' +
+      '<a class="hover:text-white" href="software.html">Software</a>' +
+      '<a class="hover:text-white" href="communication.html">Communications</a>' +
+      '<a class="hover:text-white" href="automation.html">Automation &amp; AI</a>' +
       "</div>" +
       '<div class="flex flex-col gap-2">' +
-      '<a class="hover:text-white" href="./employers.html">Employers</a>' +
-      '<a class="hover:text-white" href="./talent.html">Talent</a>' +
-      '<a class="hover:text-white" href="./about.html">About</a>' +
-      '<a class="hover:text-white" href="./contact.html">Contact</a>' +
+      '<a class="hover:text-white" href="employers.html">Employers</a>' +
+      '<a class="hover:text-white" href="talent.html">Talent</a>' +
+      '<a class="hover:text-white" href="about.html">About</a>' +
+      '<a class="hover:text-white" href="contact.html">Contact</a>' +
       "</div></div></div>" +
       '<p class="mx-auto max-w-6xl px-6 pb-10 text-xs text-white/35">Copyright © 2024 | CUBIC Technologies LLC.</p>' +
       "</footer>";
