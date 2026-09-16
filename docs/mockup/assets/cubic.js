@@ -62,7 +62,7 @@
       '<span class="block text-[10px] font-medium uppercase tracking-[0.28em] text-ink-faint">Technologies</span>' +
       "</a>" +
       '<nav class="hidden items-center gap-8 text-[13px] font-medium text-ink-soft md:flex" aria-label="Primary">' +
-      '<button type="button" class="practices-toggle' + (onPractice ? " is-current" : "") + '" aria-expanded="false" aria-controls="practices-panel">Practices</button>' +
+      '<button type="button" class="practices-toggle' + (onPractice ? " is-current" : "") + '" aria-expanded="false" aria-controls="practices-panel">Services</button>' +
       '<a class="hover:text-ink" href="employers.html"' + is("employers") + ">Employers</a>" +
       '<a class="hover:text-ink" href="talent.html"' + is("talent") + ">Talent</a>" +
       '<a class="hover:text-ink" href="about.html"' + is("about") + ">About</a>" +
@@ -70,7 +70,7 @@
       '<details class="header-menu md:hidden">' +
       '<summary class="header-menu-toggle">Menu</summary>' +
       '<div class="header-menu-panel">' +
-      '<a class="block px-4 py-2" href="practices.html">All practices</a>' +
+      '<a class="block px-4 py-2" href="practices.html">All services</a>' +
       '<a class="block px-4 py-2" href="staffing.html">Staffing</a>' +
       '<a class="block px-4 py-2" href="software.html">Software</a>' +
       '<a class="block px-4 py-2" href="communication.html">Communications</a>' +
@@ -88,7 +88,7 @@
       '<div class="practices-grid">' + cards + "</div>" +
       '<div class="mt-3 flex items-center justify-end px-1">' +
       '<a class="text-[13px] font-medium text-ink underline decoration-ash underline-offset-4 hover:decoration-ink"' +
-      is("practices") + ' href="practices.html">All practices</a>' +
+      is("practices") + ' href="practices.html">All services</a>' +
       "</div></div></div></header>";
   }
 
