@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contact — Cubic Technologies</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              ink: { DEFAULT: "#1d1d1d", soft: "rgba(29,29,29,0.68)", faint: "rgba(29,29,29,0.45)" },
+              ash: { DEFAULT: "#d9d9d9", light: "#f4f4f4", mid: "#969696" },
+              cta: { DEFAULT: "#d60020", hover: "#e50022" },
+            },
+            fontFamily: { display: ['"Outfit"', "sans-serif"], sans: ['"DM Sans"', "sans-serif"] },
+            letterSpacing: { tightest: "-0.04em" },
+          },
+        },
+      };
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,400&family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="./assets/cubic.css" />
+  </head>
+
+  <body class="bg-white font-sans text-ink antialiased" data-page="contact">
+    <div id="site-banner"></div>
+    <div id="site-header"></div>
+    <main>
+      <section class="mx-auto max-w-6xl px-6 pb-12 pt-20 md:pt-28">
+        <h1 class="reveal font-display text-4xl font-medium tracking-tightest md:text-6xl">Talk to Cubic.</h1>
+        <span class="reveal delay-1 line-grow mt-8"></span>
+        <p class="reveal delay-1 mt-8 max-w-xl text-lg leading-relaxed text-ink-soft">Tell us whether you are hiring, looking, or scoping software, communications, or automation. We will route it.</p>
+      </section>
+      <section class="border-t border-ash">
+        <div class="mx-auto grid max-w-6xl gap-16 px-6 py-16 md:grid-cols-12 md:py-24">
+          <form class="reveal md:col-span-7" data-mock-form novalidate>
+            <label class="block text-sm font-medium">I am
+              <select class="field mt-2" name="who" required>
+                <option value="">Select…</option>
+                <option value="hiring">Hiring</option>
+                <option value="candidate">A candidate</option>
+                <option value="delivery">Scoping delivery (software, communications, automation)</option>
+              </select>
+            </label>
+            <label class="mt-6 block text-sm font-medium">Name
+              <input class="field mt-2" type="text" name="name" autocomplete="name" required />
+            </label>
+            <label class="mt-6 block text-sm font-medium">Work email
+              <input class="field mt-2" type="email" name="email" autocomplete="email" required />
+            </label>
+            <label class="mt-6 block text-sm font-medium">Company <span class="font-normal text-ink-faint">(optional)</span>
+              <input class="field mt-2" type="text" name="company" autocomplete="organization" />
+            </label>
+            <label class="mt-6 block text-sm font-medium">What you need
+              <textarea class="field mt-2 min-h-[8rem]" name="need" required></textarea>
+            </label>
+            <button type="submit" class="btn btn-fill mt-8 bg-cta px-6 py-3 text-sm font-medium text-white hover:bg-cta-hover">Send</button>
+            <p id="form-note" class="mt-4 text-sm text-ink-soft" hidden></p>
+          </form>
+          <aside class="reveal delay-1 md:col-span-5 text-sm leading-relaxed text-ink-soft">
+            <p>1212 Corporate Dr #260<br />Dallas, TX 75038</p>
+            <p class="mt-6">(972) 954-9001</p>
+            <p>Recruiting: (469) 439-0087</p>
+            <p class="mt-6"><a class="underline decoration-ash underline-offset-4 hover:decoration-ink" href="mailto:info@cubicit.net">info@cubicit.net</a></p>
+            <p><a class="underline decoration-ash underline-offset-4 hover:decoration-ink" href="mailto:contact@cubicit.net">contact@cubicit.net</a></p>
+            <p class="mt-8 text-ink-faint">This mock does not send mail. Production stays on Cubic’s own contact path, not Typeform.</p>
+          </aside>
+        </div>
+      </section>
+    </main>
+    <div id="site-footer"></div>
+    <script src="./assets/cubic.js"></script>
+  </body>
+</html>

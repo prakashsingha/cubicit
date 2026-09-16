@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>App + Software Development — Cubic Technologies</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              ink: { DEFAULT: "#1d1d1d", soft: "rgba(29,29,29,0.68)", faint: "rgba(29,29,29,0.45)" },
+              ash: { DEFAULT: "#d9d9d9", light: "#f4f4f4", mid: "#969696" },
+              cta: { DEFAULT: "#d60020", hover: "#e50022" },
+            },
+            fontFamily: { display: ['"Outfit"', "sans-serif"], sans: ['"DM Sans"', "sans-serif"] },
+            letterSpacing: { tightest: "-0.04em" },
+          },
+        },
+      };
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,400&family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="./assets/cubic.css" />
+  </head>
+
+  <body class="bg-white font-sans text-ink antialiased" data-page="software">
+    <div id="site-banner"></div>
+    <div id="site-header"></div>
+    <main>
+      <section class="mx-auto max-w-6xl px-6 pb-16 pt-20 md:pt-28">
+        <p class="reveal text-[12px] font-medium uppercase tracking-[0.22em] text-ink-faint">Practice</p>
+        <h1 class="reveal delay-1 font-display mt-6 max-w-4xl text-4xl font-medium leading-[1.08] tracking-tightest md:text-6xl">Software worth putting in front of customers.</h1>
+        <span class="reveal delay-2 line-grow mt-8"></span>
+        <p class="reveal delay-2 mt-8 max-w-2xl text-lg leading-relaxed text-ink-soft">Cubic designs, builds, and hardens applications with people who have done it before. UI/UX, engineering, and audit sit on one team. AI is in the product when it has an owner, tests, and a rollback, not as a sticker on the homepage.</p>
+      </section>
+      <section class="border-t border-ash">
+        <div class="reveal mx-auto max-w-6xl px-6 py-20 md:py-28">
+          <ul class="grid gap-10 md:grid-cols-2 text-[15px] leading-relaxed"><li class="list-item"><strong class="block font-medium">UI &amp; UX.</strong> Interfaces that match how people actually work, including where a copilot or search assist belongs, and where it does not.</li>
+<li class="list-item"><strong class="block font-medium">Engineering.</strong> Senior hands on the code. We use AI to move faster. We still review, test, and own what ships.</li>
+<li class="list-item"><strong class="block font-medium">Audit &amp; enhance.</strong> Read what you have, including model calls and prompt chains, tell you the truth, then improve it.</li>
+<li class="list-item"><strong class="block font-medium">Applied AI.</strong> Retrieval, copilots, document intake, and evals when the job is real. A wrapper around a public chat model is not an engagement.</li></ul>
+          
+        </div>
+      </section>
+      
+      <section class="border-t border-ash bg-ash-light">
+        <div class="reveal mx-auto max-w-6xl px-6 py-20 md:py-24">
+          <h2 class="font-display text-2xl font-medium tracking-tightest">A client on the work</h2>
+          <blockquote class="mt-6 max-w-2xl font-display text-xl leading-snug tracking-tight">“As an agency, it is imperative to build relationships with partners that can deliver custom digital solutions effectively and efficiently. Cubic Technologies is our go-to partner for application and software development.”</blockquote>
+          <p class="mt-6 text-sm text-ink-soft">Joseph Alexander, The Uptown Agency</p>
+          <p class="mt-6 text-sm text-ink-faint">Proof to confirm: one named product or industry Cubic can show.</p>
+        </div>
+      </section>
+      <section class="border-t border-ash">
+        <div class="reveal mx-auto max-w-6xl px-6 py-20 md:py-24">
+          <h2 class="font-display text-2xl font-medium tracking-tightest">When to call us</h2>
+          <p class="mt-6 max-w-2xl text-lg leading-relaxed text-ink-soft">A product that has outgrown its first build. A rebuild you cannot staff internally. A team that wants AI in the product without turning the roadmap into a demo reel.</p>
+          <a href="./contact.html" class="btn btn-fill mt-10 inline-block bg-cta px-6 py-3 text-sm font-medium text-white hover:bg-cta-hover">Talk about a build</a>
+        </div>
+      </section>
+    </main>
+    <div id="site-footer"></div>
+    <script src="./assets/cubic.js"></script>
+  </body>
+</html>

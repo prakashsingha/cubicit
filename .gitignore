@@ -1,0 +1,53 @@
+# OS
+.DS_Store
+.AppleDouble
+.LSOverride
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# Editors / IDEs
+.idea/
+.vscode/*
+!.vscode/extensions.json
+!.vscode/settings.json.example
+*.swp
+*.swo
+*~
+
+# Cursor — ignore local/cache; keep project rules and verification skill
+.cursor/*
+!.cursor/rules/
+!.cursor/rules/**
+!.cursor/skills/
+!.cursor/skills/**
+.cursor/skills/**/artifacts/**
+
+# Env / secrets
+.env
+.env.*
+!.env.example
+!.env*.example
+*.pem
+*.key
+
+# Logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.pnpm-debug.log*
+
+# Python (local http.server / verify helpers)
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+
+# Node (if tooling is added later)
+node_modules/
+
+# Verify run state and scratch
+tmp/
+temp/
+*.tmp

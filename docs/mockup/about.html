@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>About — Cubic Technologies</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              ink: { DEFAULT: "#1d1d1d", soft: "rgba(29,29,29,0.68)", faint: "rgba(29,29,29,0.45)" },
+              ash: { DEFAULT: "#d9d9d9", light: "#f4f4f4", mid: "#969696" },
+              cta: { DEFAULT: "#d60020", hover: "#e50022" },
+            },
+            fontFamily: { display: ['"Outfit"', "sans-serif"], sans: ['"DM Sans"', "sans-serif"] },
+            letterSpacing: { tightest: "-0.04em" },
+          },
+        },
+      };
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,400&family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="./assets/cubic.css" />
+  </head>
+
+  <body class="bg-white font-sans text-ink antialiased" data-page="about">
+    <div id="site-banner"></div>
+    <div id="site-header"></div>
+    <main>
+      <section class="mx-auto max-w-6xl px-6 pb-16 pt-20 md:pt-28">
+        <h1 class="reveal font-display max-w-4xl text-4xl font-medium leading-[1.08] tracking-tightest md:text-6xl">Built in Dallas. Aimed further.</h1>
+        <span class="reveal delay-1 line-grow mt-8"></span>
+        <p class="reveal delay-1 mt-8 max-w-2xl text-lg leading-relaxed text-ink-soft">Cubic Technologies LLC is a technology firm: staffing for software teams, and delivery in product, communications, and automation (RPA, workflow, and supervised AI). The longer bet is to be the house companies call when the work is hard, the tools have changed, and the people still have to be excellent.</p>
+        <p class="reveal delay-2 mt-8 text-sm text-ink-faint">1212 Corporate Dr #260, Dallas, TX 75038</p>
+      </section>
+      <section class="border-t border-ash">
+        <div class="reveal mx-auto grid max-w-6xl gap-12 px-6 py-20 md:grid-cols-2 md:py-28">
+          <div>
+            <h2 class="font-display text-2xl font-medium tracking-tightest">How we work</h2>
+            <p class="mt-6 text-lg leading-relaxed text-ink-soft">We stay close to the craft. Staffing is not a side desk. Delivery is not a brochure. The same standard runs through both.</p>
+          </div>
+          <div>
+            <h2 class="font-display text-2xl font-medium tracking-tightest">Leadership</h2>
+            <p class="mt-6 text-lg leading-relaxed text-ink-faint">Leadership and public story to confirm. One short paragraph. No slogans.</p>
+          </div>
+        </div>
+      </section>
+      <section class="border-t border-ash bg-ash-light">
+        <div class="reveal mx-auto max-w-6xl px-6 py-16">
+          <a href="./contact.html" class="btn btn-fill inline-block bg-cta px-6 py-3 text-sm font-medium text-white hover:bg-cta-hover">Talk to Cubic</a>
+        </div>
+      </section>
+    </main>
+    <div id="site-footer"></div>
+    <script src="./assets/cubic.js"></script>
+  </body>
+</html>

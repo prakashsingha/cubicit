@@ -1,0 +1,142 @@
+#!/usr/bin/env bash
+# Doctor, HTTP probe, artifacts, and cleanup for cubicit.net verification.
+# There is no local process. Never kill by name. Cleanup drops run state only.
+set -euo pipefail
+
+SKILL_DIR="$(cd "$(dirname "$0")" && pwd)"
+REPO_ROOT="$(cd "$SKILL_DIR/../../.." && pwd)"
+RUN_DIR="${VERIFY_RUN_DIR:-$REPO_ROOT/tmp/verify-cubicit-net/run}"
+ARTIFACT_ROOT="$SKILL_DIR/artifacts"
+DEFAULT_BASE_URL="${VERIFY_BASE_URL:-https://www.cubicit.net}"
+
+die() {
+  echo "control-cubicit-net: $*" >&2
+  exit 1
+}
+
+need_cmd() {
+  command -v "$1" >/dev/null 2>&1 || die "missing command: $1"
+}
+
+read_state() {
+  [[ -f "$RUN_DIR/url" ]] || die "no run state at $RUN_DIR (launch first)"
+  RUN_URL="$(tr -d '[:space:]' <"$RUN_DIR/url")"
+  [[ -n "$RUN_URL" ]] || die "empty url in $RUN_DIR/url"
+}
+
+http_get() {
+  local url="$1"
+  local body="$2"
+  local code
+  code="$(curl -sS -L --max-time 30 -o "$body" -w '%{http_code}' "$url")"
+  echo "$code"
+}
+
+cmd_launch() {
+  need_cmd curl
+  mkdir -p "$RUN_DIR"
+  printf '%s\n' "$DEFAULT_BASE_URL" >"$RUN_DIR/url"
+  printf '%s\n' "$(date -u +%Y-%m-%dT%H:%M:%SZ)" >"$RUN_DIR/started_at"
+  echo "launch: recorded $DEFAULT_BASE_URL (Squarespace production, no local process)"
+  cmd_doctor
+}
+
+cmd_doctor() {
+  need_cmd curl
+  read_state
+  local body
+  body="$(mktemp)"
+  local code
+  code="$(http_get "$RUN_URL/" "$body")"
+  if [[ "$code" != "200" ]]; then
+    rm -f "$body"
+    die "doctor: GET $RUN_URL/ returned HTTP $code (want 200)"
+  fi
+  grep -q 'Cubic Technologies' "$body" || {
+    rm -f "$body"
+    die "doctor: GET $RUN_URL/ missing Cubic Technologies"
+  }
+  grep -q 'Engage Your Customers With Connected Experiences' "$body" || {
+    rm -f "$body"
+    die "doctor: GET $RUN_URL/ missing home heading"
+  }
+  rm -f "$body"
+  echo "doctor: ok url=$RUN_URL http=200 identity=Cubic Technologies"
+}
+
+cmd_url() {
+  read_state
+  printf '%s\n' "$RUN_URL"
+}
+
+cmd_http() {
+  need_cmd curl
+  read_state
+  local method="${1:-GET}"
+  local path="${2:-/}"
+  [[ "$method" == "GET" ]] || die "only GET is allowed (production site; no mutations)"
+  [[ "$path" == /* ]] || die "path must start with /"
+  local body
+  body="$(mktemp)"
+  local code
+  code="$(http_get "$RUN_URL$path" "$body")"
+  echo "HTTP $code $method $RUN_URL$path"
+  if command -v python3 >/dev/null 2>&1; then
+    python3 - "$body" <<'PY'
+import sys
+p = sys.argv[1]
+data = open(p, "rb").read()
+text = data.decode("utf-8", "replace")
+print(text[:2000])
+PY
+  else
+    head -c 2000 "$body"
+    echo
+  fi
+  rm -f "$body"
+  [[ "$code" == "200" ]]
+}
+
+cmd_artifacts() {
+  local id="${VERIFY_RUN_ID:-$(date -u +%Y%m%dT%H%M%SZ)}"
+  local dir="$ARTIFACT_ROOT/$id"
+  mkdir -p "$dir"
+  printf '%s\n' "$dir"
+}
+
+cmd_cleanup() {
+  if [[ ! -d "$RUN_DIR" ]]; then
+    echo "cleanup: no run state"
+    return 0
+  fi
+  rm -rf "$RUN_DIR"
+  echo "cleanup: removed $RUN_DIR; artifacts under $ARTIFACT_ROOT kept"
+}
+
+usage() {
+  cat <<'EOF'
+usage:
+  control-cubicit-net launch      record the production URL and run doctor
+  control-cubicit-net doctor      GET / is 200 with Cubic Technologies identity
+  control-cubicit-net url         print the recorded base URL
+  control-cubicit-net http GET /path   GET only; fails unless HTTP 200
+  control-cubicit-net artifacts   create and print an evidence directory
+  control-cubicit-net cleanup     drop run state; keep artifacts
+
+env:
+  VERIFY_BASE_URL   default https://www.cubicit.net
+  VERIFY_RUN_DIR    state directory (default <repo>/tmp/verify-cubicit-net/run)
+  VERIFY_RUN_ID     artifact folder name (default UTC timestamp)
+EOF
+}
+
+case "${1:-}" in
+  launch) cmd_launch ;;
+  doctor) cmd_doctor ;;
+  url) cmd_url ;;
+  http) shift; cmd_http "$@" ;;
+  artifacts) cmd_artifacts ;;
+  cleanup) cmd_cleanup ;;
+  -h|--help|help|"") usage ;;
+  *) die "unknown command: $1" ;;
+esac

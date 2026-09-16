@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Communication Services — Cubic Technologies</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              ink: { DEFAULT: "#1d1d1d", soft: "rgba(29,29,29,0.68)", faint: "rgba(29,29,29,0.45)" },
+              ash: { DEFAULT: "#d9d9d9", light: "#f4f4f4", mid: "#969696" },
+              cta: { DEFAULT: "#d60020", hover: "#e50022" },
+            },
+            fontFamily: { display: ['"Outfit"', "sans-serif"], sans: ['"DM Sans"', "sans-serif"] },
+            letterSpacing: { tightest: "-0.04em" },
+          },
+        },
+      };
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,400&family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="./assets/cubic.css" />
+  </head>
+
+  <body class="bg-white font-sans text-ink antialiased" data-page="communication">
+    <div id="site-banner"></div>
+    <div id="site-header"></div>
+    <main>
+      <section class="mx-auto max-w-6xl px-6 pb-16 pt-20 md:pt-28">
+        <p class="reveal text-[12px] font-medium uppercase tracking-[0.22em] text-ink-faint">Practice</p>
+        <h1 class="reveal delay-1 font-display mt-6 max-w-4xl text-4xl font-medium leading-[1.08] tracking-tightest md:text-6xl">Communications that follow your rules, not the vendor’s.</h1>
+        <span class="reveal delay-2 line-grow mt-8"></span>
+        <p class="reveal delay-2 mt-8 max-w-2xl text-lg leading-relaxed text-ink-soft">Cubic designs voice and engagement systems so calls, routing, and follow-up match how your teams sell, support, and operate. Assist and transcription are in scope. Replacing your agents with an unsupervised bot is not.</p>
+      </section>
+      <section class="border-t border-ash">
+        <div class="reveal mx-auto max-w-6xl px-6 py-20 md:py-28">
+          <ul class="grid gap-10 md:grid-cols-2 text-[15px] leading-relaxed"><li class="list-item"><strong class="block font-medium">Advanced VoIP.</strong> Voice that holds up when volume and routing get serious.</li>
+<li class="list-item"><strong class="block font-medium">Custom rules.</strong> The system behaves like your process, not a default tree.</li>
+<li class="list-item"><strong class="block font-medium">Improved efficiency.</strong> Fewer hops, fewer lost handoffs. Assist that drafts, not that hangs up on the customer.</li>
+<li class="list-item"><strong class="block font-medium">Digital engagement.</strong> The conversation continues off the handset: chat, SMS, email, with a human still accountable.</li></ul>
+          <p class="mt-10 text-sm text-ink-faint">Proof to confirm: a before/after Cubic can share.</p>
+        </div>
+      </section>
+      
+      <section class="border-t border-ash">
+        <div class="reveal mx-auto max-w-6xl px-6 py-20 md:py-24">
+          <h2 class="font-display text-2xl font-medium tracking-tightest">When to call us</h2>
+          <p class="mt-6 max-w-2xl text-lg leading-relaxed text-ink-soft">A contact center or sales floor that has outgrown generic PBX. A company that wants routing, reporting, and optional AI assist tied to real work, not a widget on the marketing site.</p>
+          <a href="./contact.html" class="btn btn-fill mt-10 inline-block bg-cta px-6 py-3 text-sm font-medium text-white hover:bg-cta-hover">Talk about communications</a>
+        </div>
+      </section>
+    </main>
+    <div id="site-footer"></div>
+    <script src="./assets/cubic.js"></script>
+  </body>
+</html>

@@ -1,0 +1,247 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cubic Technologies</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              ink: { DEFAULT: "#1d1d1d", soft: "rgba(29,29,29,0.68)", faint: "rgba(29,29,29,0.45)" },
+              ash: { DEFAULT: "#d9d9d9", light: "#f4f4f4", mid: "#969696" },
+              cta: { DEFAULT: "#d60020", hover: "#e50022" },
+            },
+            fontFamily: {
+              display: ['"Outfit"', "sans-serif"],
+              sans: ['"DM Sans"', "sans-serif"],
+            },
+            letterSpacing: { tightest: "-0.04em" },
+          },
+        },
+      };
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,400&family=Outfit:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./assets/cubic.css" />
+  </head>
+  <body class="bg-white font-sans text-ink antialiased" data-page="home">
+    <div id="site-banner"></div>
+    <div id="site-header"></div>
+    <main>
+      <section class="hero-slider" data-hero-slider>
+        <div class="hero-track">
+          <article class="hero-slide" id="slide-cubic" aria-hidden="false">
+            <div class="hero-stage h-full">
+              <div class="hero-wash" aria-hidden="true">
+                <span class="hero-blob hero-blob-a"></span>
+                <span class="hero-blob hero-blob-b"></span>
+              </div>
+              <div class="relative z-10 mx-auto max-w-6xl px-6 pb-44 pt-24 md:pb-48 md:pt-32">
+                <p class="reveal mb-8 text-[12px] font-medium uppercase tracking-[0.22em] text-ink-faint">Dallas · Talent and delivery</p>
+                <h1 class="reveal delay-1 font-display max-w-4xl text-5xl font-medium leading-[1.05] tracking-tightest md:text-7xl">
+                  Senior people. The work they are trusted to do.
+                </h1>
+                <span class="reveal delay-2 line-grow mt-8"></span>
+                <p class="reveal delay-2 mt-10 max-w-xl text-lg leading-relaxed text-ink-soft">
+                  Cubic Technologies staffs highly experienced software specialists and delivers engineering,
+                  communications, and automation (including AI where it earns a place) alongside them. We know
+                  the work because we do the work.
+                </p>
+                <div class="reveal delay-3 mt-12 flex flex-wrap gap-3">
+                  <a href="./employers.html" class="btn btn-fill bg-cta px-6 py-3 text-sm font-medium text-white hover:bg-cta-hover">Hire senior talent</a>
+                  <a href="./talent.html" class="btn border border-ash px-6 py-3 text-sm font-medium text-ink hover:border-ink">I’m a candidate</a>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <article class="hero-slide hero-slide-photo" id="slide-staffing" aria-hidden="true">
+            <img class="hero-slide-img" src="https://images.unsplash.com/photo-1551434678-e076c223a692?auto=format&amp;fit=crop&amp;w=1800&amp;q=80" alt="Two software engineers reviewing work together at a desk. Placeholder until Cubic supplies original photography." width="1800" height="1200" />
+            <div class="hero-slide-wash"></div>
+            <div class="hero-slide-copy">
+              <p class="text-[12px] font-medium uppercase tracking-[0.22em] text-white/55">Lead offer</p>
+              <h2 class="font-display mt-5 max-w-3xl text-4xl font-medium leading-[1.08] tracking-tightest text-white md:text-6xl">Software development staffing for work that cannot miss.</h2>
+              <span class="line-grow mt-8"></span>
+              <p class="mt-8 max-w-xl text-lg leading-relaxed text-white/80">High-caliber pool, rigorous screen, shortlists you can act on. We are a talent partner, not a résumé relay.</p>
+              <a href="./staffing.html" class="btn btn-fill mt-10 inline-block bg-cta px-6 py-3 text-sm font-medium text-white hover:bg-cta-hover">Hire senior talent</a>
+            </div>
+          </article>
+
+          <article class="hero-slide hero-slide-photo" id="slide-software" aria-hidden="true">
+            <img class="hero-slide-img" src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&amp;fit=crop&amp;w=1800&amp;q=80" alt="Team working on laptops around a table. Placeholder until Cubic supplies original photography." width="1800" height="1200" />
+            <div class="hero-slide-wash"></div>
+            <div class="hero-slide-copy">
+              <p class="text-[12px] font-medium uppercase tracking-[0.22em] text-white/55">Practice</p>
+              <h2 class="font-display mt-5 max-w-3xl text-4xl font-medium leading-[1.08] tracking-tightest text-white md:text-6xl">Software worth putting in front of customers.</h2>
+              <span class="line-grow mt-8"></span>
+              <p class="mt-8 max-w-xl text-lg leading-relaxed text-white/80">Product, engineering, and applied AI that has an owner and a rollback.</p>
+              <a href="./software.html" class="btn btn-fill mt-10 inline-block bg-cta px-6 py-3 text-sm font-medium text-white hover:bg-cta-hover">Talk about a build</a>
+            </div>
+          </article>
+
+          <article class="hero-slide hero-slide-photo" id="slide-communication" aria-hidden="true">
+            <img class="hero-slide-img" src="https://images.unsplash.com/photo-1584438784894-089d6a62b8fa?auto=format&amp;fit=crop&amp;w=1800&amp;q=80" alt="Person taking a call with a headset. Placeholder until Cubic supplies original photography." width="1800" height="1200" />
+            <div class="hero-slide-wash"></div>
+            <div class="hero-slide-copy">
+              <p class="text-[12px] font-medium uppercase tracking-[0.22em] text-white/55">Practice</p>
+              <h2 class="font-display mt-5 max-w-3xl text-4xl font-medium leading-[1.08] tracking-tightest text-white md:text-6xl">Communications that follow your rules, not the vendor’s.</h2>
+              <span class="line-grow mt-8"></span>
+              <p class="mt-8 max-w-xl text-lg leading-relaxed text-white/80">Voice, routing, and assist that follow your rules, not a generic bot.</p>
+              <a href="./communication.html" class="btn btn-fill mt-10 inline-block bg-cta px-6 py-3 text-sm font-medium text-white hover:bg-cta-hover">Talk about communications</a>
+            </div>
+          </article>
+
+          <article class="hero-slide hero-slide-photo" id="slide-automation" aria-hidden="true">
+            <img class="hero-slide-img" src="https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&amp;fit=crop&amp;w=1800&amp;q=80" alt="Circuit board close-up. Placeholder until Cubic supplies original photography." width="1800" height="1200" />
+            <div class="hero-slide-wash"></div>
+            <div class="hero-slide-copy">
+              <p class="text-[12px] font-medium uppercase tracking-[0.22em] text-white/55">Practice</p>
+              <h2 class="font-display mt-5 max-w-3xl text-4xl font-medium leading-[1.08] tracking-tightest text-white md:text-6xl">Automate the grind. Keep people on judgment.</h2>
+              <span class="line-grow mt-8"></span>
+              <p class="mt-8 max-w-xl text-lg leading-relaxed text-white/80">RPA, workflow, and supervised AI on messy work. People keep judgment.</p>
+              <a href="./automation.html" class="btn btn-fill mt-10 inline-block bg-cta px-6 py-3 text-sm font-medium text-white hover:bg-cta-hover">Talk about automation</a>
+            </div>
+          </article>
+        </div>
+
+        <div class="hero-tabs" role="tablist" aria-label="Home slides">
+          <button type="button" class="hero-tab hero-mini is-on" role="tab" aria-selected="true" aria-controls="slide-cubic" id="tab-cubic">
+            <span class="hero-mini-plain" aria-hidden="true"></span>
+            <span class="practice-card-copy">
+              <span class="practice-card-title">Cubic<br />Technologies</span>
+              <span class="practice-card-line">Building Leading Digital Solutions For Brands Across North America</span>
+            </span>
+          </button>
+          <button type="button" class="hero-tab hero-mini" role="tab" aria-selected="false" aria-controls="slide-staffing" id="tab-staffing">
+            <img src="https://images.unsplash.com/photo-1551434678-e076c223a692?auto=format&amp;fit=crop&amp;w=800&amp;q=80" alt="" width="800" height="600" />
+            <span class="practice-card-wash"></span>
+            <span class="practice-card-copy">
+              <span class="practice-card-title">Software Development Staffing</span>
+              <span class="practice-card-line">High-caliber pool, rigorous screen, shortlists you can act on.</span>
+            </span>
+          </button>
+          <button type="button" class="hero-tab hero-mini" role="tab" aria-selected="false" aria-controls="slide-software" id="tab-software">
+            <img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&amp;fit=crop&amp;w=800&amp;q=80" alt="" width="800" height="600" />
+            <span class="practice-card-wash"></span>
+            <span class="practice-card-copy">
+              <span class="practice-card-title">App + Software Development</span>
+              <span class="practice-card-line">UI/UX, engineering, audit, applied AI in the product.</span>
+            </span>
+          </button>
+          <button type="button" class="hero-tab hero-mini" role="tab" aria-selected="false" aria-controls="slide-communication" id="tab-communication">
+            <img src="https://images.unsplash.com/photo-1584438784894-089d6a62b8fa?auto=format&amp;fit=crop&amp;w=800&amp;q=80" alt="" width="800" height="600" />
+            <span class="practice-card-wash"></span>
+            <span class="practice-card-copy">
+              <span class="practice-card-title">Communication Services</span>
+              <span class="practice-card-line">VoIP, custom rules, engagement, human-owned assist.</span>
+            </span>
+          </button>
+          <button type="button" class="hero-tab hero-mini" role="tab" aria-selected="false" aria-controls="slide-automation" id="tab-automation">
+            <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&amp;fit=crop&amp;w=800&amp;q=80" alt="" width="800" height="600" />
+            <span class="practice-card-wash"></span>
+            <span class="practice-card-copy">
+              <span class="practice-card-title">Automation &amp; AI</span>
+              <span class="practice-card-line">Classic RPA plus workflow and supervised AI. Humans keep the exceptions.</span>
+            </span>
+          </button>
+        </div>
+      </section>
+
+      <section class="border-t border-ash">
+        <div class="reveal mx-auto grid max-w-6xl items-center gap-12 px-6 py-24 md:grid-cols-12 md:gap-16 md:py-32">
+          <div class="md:col-span-5">
+            <p class="text-[12px] font-medium uppercase tracking-[0.22em] text-ink-faint">Lead offer</p>
+            <h2 class="font-display mt-4 text-3xl font-medium tracking-tightest md:text-4xl">
+              Talent you would hire yourself, if you had six more months.
+            </h2>
+            <span class="line-grow mt-6"></span>
+            <p class="mt-8 max-w-prose text-lg leading-relaxed text-ink-soft">
+              Cubic builds a high-caliber pool, screens for craft and character, and walks candidates
+              through interviews with you. You meet fewer people. You meet the right ones.
+            </p>
+            <a class="mt-8 inline-block text-sm font-medium text-ink underline decoration-ash underline-offset-4 hover:decoration-ink" href="./staffing.html"
+              >Software Development Staffing</a
+            >
+            <ul class="mt-12 space-y-4 border-t border-ash pt-10 text-[15px] leading-relaxed">
+              <li class="list-item">High-caliber talent pool</li>
+              <li class="list-item">Screened for depth, not keyword match</li>
+              <li class="list-item">People who can ship with modern AI tooling without handing the job to the model</li>
+              <li class="list-item">Interviews that respect your time and theirs</li>
+              <li class="list-item">Hand-selected shortlists, not a blast of résumés</li>
+            </ul>
+          </div>
+          <figure class="md:col-span-7">
+            <div class="staff-photo aspect-[4/5] min-h-[22rem] md:aspect-[5/6] md:min-h-[36rem]">
+              <img
+                src="https://images.unsplash.com/photo-1551434678-e076c223a692?auto=format&amp;fit=crop&amp;w=1600&amp;q=80"
+                alt="Two software engineers reviewing work together at a desk. Placeholder until Cubic supplies original photography."
+                width="1600"
+                height="2000"
+              />
+            </div>
+            <figcaption class="mt-3 text-[11px] text-ink-faint">
+              Placeholder photograph. Replace with Cubic people, with consent.
+            </figcaption>
+          </figure>
+        </div>
+      </section>
+
+      <section class="border-t border-ash bg-ash-light">
+        <div class="mx-auto max-w-6xl px-6 py-24 md:py-32">
+          <h2 class="reveal font-display max-w-2xl text-3xl font-medium tracking-tightest md:text-4xl">
+            When you need the work built, not only the seat filled.
+          </h2>
+          <ul class="reveal delay-1 mt-16 divide-y divide-ash border-y border-ash">
+            <li>
+              <a class="practice-row group flex flex-col gap-2 py-8 md:flex-row md:items-baseline md:justify-between md:gap-12" href="./software.html">
+                <span class="font-display text-xl font-medium tracking-tight">App + Software Development</span>
+                <span class="max-w-md text-sm text-ink-soft group-hover:text-ink">Product, engineering, and applied AI that has an owner and a rollback.</span>
+              </a>
+            </li>
+            <li>
+              <a class="practice-row group flex flex-col gap-2 py-8 md:flex-row md:items-baseline md:justify-between md:gap-12" href="./communication.html">
+                <span class="font-display text-xl font-medium tracking-tight">Communication Services</span>
+                <span class="max-w-md text-sm text-ink-soft group-hover:text-ink">Voice, routing, and assist that follow your rules, not a generic bot.</span>
+              </a>
+            </li>
+            <li>
+              <a class="practice-row group flex flex-col gap-2 py-8 md:flex-row md:items-baseline md:justify-between md:gap-12" href="./automation.html">
+                <span class="font-display text-xl font-medium tracking-tight">Automation &amp; AI</span>
+                <span class="max-w-md text-sm text-ink-soft group-hover:text-ink">RPA, workflow, and supervised AI on messy work. People keep judgment.</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="border-t border-ash">
+        <div class="reveal mx-auto max-w-3xl px-6 py-24 md:py-32">
+          <blockquote class="font-display text-2xl font-normal leading-snug tracking-tight md:text-3xl">
+            “As an agency, it is imperative to build relationships with partners that can deliver custom
+            digital solutions effectively and efficiently. Cubic Technologies is our go-to partner for
+            application and software development.”
+          </blockquote>
+          <p class="mt-10 text-sm text-ink-soft">Joseph Alexander, The Uptown Agency</p>
+        </div>
+      </section>
+
+      <section class="border-t border-ash bg-ink text-white">
+        <div class="reveal mx-auto max-w-6xl px-6 py-24 md:py-32">
+          <h2 class="font-display max-w-xl text-3xl font-medium tracking-tightest md:text-5xl">
+            Tell us what you are trying to staff or ship.
+          </h2>
+          <a href="./contact.html" class="btn btn-fill mt-10 inline-block bg-cta px-6 py-3 text-sm font-medium text-white hover:bg-cta-hover">Talk to Cubic</a>
+        </div>
+      </section>
+    </main>
+    <div id="site-footer"></div>
+    <script src="./assets/cubic.js"></script>
+  </body>
+</html>

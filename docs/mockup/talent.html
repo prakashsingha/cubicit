@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Talent — Cubic Technologies</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              ink: { DEFAULT: "#1d1d1d", soft: "rgba(29,29,29,0.68)", faint: "rgba(29,29,29,0.45)" },
+              ash: { DEFAULT: "#d9d9d9", light: "#f4f4f4", mid: "#969696" },
+              cta: { DEFAULT: "#d60020", hover: "#e50022" },
+            },
+            fontFamily: { display: ['"Outfit"', "sans-serif"], sans: ['"DM Sans"', "sans-serif"] },
+            letterSpacing: { tightest: "-0.04em" },
+          },
+        },
+      };
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,400&family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="./assets/cubic.css" />
+  </head>
+
+  <body class="bg-white font-sans text-ink antialiased" data-page="talent">
+    <div id="site-banner"></div>
+    <div id="site-header"></div>
+    <main>
+      <section class="mx-auto max-w-6xl px-6 pb-16 pt-20 md:pt-28">
+        <h1 class="reveal font-display max-w-4xl text-4xl font-medium leading-[1.08] tracking-tightest md:text-6xl">Serious roles. A house that will not waste your time.</h1>
+        <span class="reveal delay-1 line-grow mt-8"></span>
+        <p class="reveal delay-1 mt-8 max-w-2xl text-lg leading-relaxed text-ink-soft">Cubic represents experienced software specialists to companies that actually need that depth. If we take you forward, we have a reason.</p>
+      </section>
+      <section class="border-t border-ash">
+        <div class="reveal mx-auto max-w-6xl px-6 py-20 md:py-28">
+          <h2 class="font-display text-2xl font-medium tracking-tightest">What to expect</h2>
+          <ul class="mt-10 max-w-2xl space-y-6 text-[15px] leading-relaxed">
+            <li class="list-item">A conversation about the work you want, not a form that disappears</li>
+            <li class="list-item">Roles matched to how you build, not only your last title, including teams that expect you to use AI tools without hiding behind them</li>
+            <li class="list-item">Interview prep that treats you as a peer</li>
+            <li class="list-item text-ink-faint">How you submit: this mock uses the contact form. Live path to confirm (form vs info@cubicit.net).</li>
+          </ul>
+          <a href="./contact.html" class="btn btn-fill mt-12 inline-block bg-cta px-6 py-3 text-sm font-medium text-white hover:bg-cta-hover">Talk about a role</a>
+          <p class="mt-10 text-sm text-ink-soft">Recruiting (469) 439-0087 · <a class="underline decoration-ash underline-offset-4 hover:decoration-ink" href="mailto:info@cubicit.net">info@cubicit.net</a></p>
+        </div>
+      </section>
+    </main>
+    <div id="site-footer"></div>
+    <script src="./assets/cubic.js"></script>
+  </body>
+</html>

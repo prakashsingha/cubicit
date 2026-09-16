@@ -1,0 +1,26 @@
+---
+description: pstack per-role model choices for cubicit.net (Cursor Pro, Cursor Models only)
+alwaysApply: true
+---
+# pstack model configuration. One line per role. Delete a line to fall back to the skill default.
+# `inherit-parent` or `auto` as a value: the role runs on the parent chat model (omit Task `model`). Alias entries in a panel list still count toward its fan-out.
+# budget: medium (high)
+# Scope: cubicit.net only. Do not copy to ~/.cursor/rules. Cursor Models only (no Opus, no GPT).
+feature, refactoring: cursor-grok-4.6-high-fast
+bug-fix: cursor-grok-4.6-high-fast
+perf-issue: cursor-grok-4.6-high-fast
+hillclimb: cursor-grok-4.6-high-fast
+judgment and prose: composer-2.5-fast
+hardest tasks: composer-2.5-fast
+how explorer: cursor-grok-4.6-high-fast
+how explainer: composer-2.5-fast
+how critics: composer-2.5-fast, cursor-grok-4.6-high-fast
+why investigators: cursor-grok-4.6-high-fast
+why synthesizer: composer-2.5-fast
+reflect tooling: cursor-grok-4.6-high-fast
+reflect judgment, divergent, synthesizer: composer-2.5-fast
+arena runners: composer-2.5-fast, cursor-grok-4.6-high-fast
+arena cross-judge pool: composer-2.5-fast, cursor-grok-4.6-high-fast
+swarm workers: cursor-grok-4.6-high-fast
+architect runners: composer-2.5-fast, cursor-grok-4.6-high-fast
+interrogate reviewers: composer-2.5-fast, cursor-grok-4.6-high-fast

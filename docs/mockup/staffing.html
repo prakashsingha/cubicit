@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Software Development Staffing — Cubic Technologies</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              ink: { DEFAULT: "#1d1d1d", soft: "rgba(29,29,29,0.68)", faint: "rgba(29,29,29,0.45)" },
+              ash: { DEFAULT: "#d9d9d9", light: "#f4f4f4", mid: "#969696" },
+              cta: { DEFAULT: "#d60020", hover: "#e50022" },
+            },
+            fontFamily: { display: ['"Outfit"', "sans-serif"], sans: ['"DM Sans"', "sans-serif"] },
+            letterSpacing: { tightest: "-0.04em" },
+          },
+        },
+      };
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,400&family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="./assets/cubic.css" />
+  </head>
+  <body class="bg-white font-sans text-ink antialiased" data-page="staffing">
+    <div id="site-banner"></div>
+    <div id="site-header"></div>
+    <main>
+      <section class="mx-auto max-w-6xl px-6 pb-16 pt-20 md:pt-28">
+        <p class="reveal text-[12px] font-medium uppercase tracking-[0.22em] text-ink-faint">Lead offer</p>
+        <h1 class="reveal delay-1 font-display mt-6 max-w-4xl text-4xl font-medium leading-[1.08] tracking-tightest md:text-6xl">
+          Software development staffing for work that cannot miss.
+        </h1>
+        <span class="reveal delay-2 line-grow mt-8"></span>
+        <p class="reveal delay-2 mt-8 max-w-2xl text-lg leading-relaxed text-ink-soft">
+          Cubic hand-selects senior engineers and specialists, screens them properly, and runs a tight interview path with your team. We are a talent partner, not a résumé relay.
+        </p>
+      </section>
+
+      <section class="border-t border-ash">
+        <div class="reveal mx-auto grid max-w-6xl gap-12 px-6 py-20 md:grid-cols-2 md:py-28">
+          <div>
+            <h2 class="font-display text-2xl font-medium tracking-tightest">How we staff</h2>
+            <ul class="mt-10 space-y-8 text-[15px] leading-relaxed">
+              <li class="list-item"><strong class="block font-medium">High-caliber talent pool.</strong> People who have shipped, not people who have applied a lot.</li>
+              <li class="list-item"><strong class="block font-medium">Meticulously screened.</strong> Craft, communication, and whether they will last on your team. We also look at how they use AI tools: as leverage, not as a substitute for thinking.</li>
+              <li class="list-item"><strong class="block font-medium">Streamlined interviews.</strong> A sequence that protects hiring-manager time.</li>
+              <li class="list-item"><strong class="block font-medium">Hand-select top candidates.</strong> A short list with a point of view, not a portal dump. We do not run a black-box AI matcher.</li>
+            </ul>
+          </div>
+          <div>
+            <h2 class="font-display text-2xl font-medium tracking-tightest">How it works</h2>
+            <ol class="mt-10 space-y-5 text-[15px] leading-relaxed text-ink-soft">
+              <li>1. We learn the work, not only the title.</li>
+              <li>2. We search the pool and the market.</li>
+              <li>3. You meet a shortlist we will stand behind.</li>
+              <li>4. We stay through offer and start.</li>
+            </ol>
+            <p class="mt-10 text-sm text-ink-faint">Proof to confirm: practice areas you staff most, and any time-to-present you will own.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="border-t border-ash bg-ash-light">
+        <div class="reveal mx-auto max-w-6xl px-6 py-20 md:py-24">
+          <h2 class="font-display text-2xl font-medium tracking-tightest">Who this is for</h2>
+          <p class="mt-6 max-w-2xl text-lg leading-relaxed text-ink-soft">
+            Companies that need experienced engineers, not volume. Teams that already use Copilot, Cursor, or internal AI tools and still need adults in the seats. Hiring managers who have been burned by keyword mills.
+          </p>
+          <a href="./contact.html" class="btn btn-fill mt-10 inline-block bg-cta px-6 py-3 text-sm font-medium text-white hover:bg-cta-hover">Hire senior talent</a>
+        </div>
+      </section>
+
+      <section class="border-t border-ash">
+        <div class="mx-auto flex max-w-6xl flex-col items-start justify-between gap-6 px-6 py-12 md:flex-row md:items-center">
+          <p class="text-sm text-ink-soft">If you are the talent, we will not waste your time either.</p>
+          <a href="./talent.html" class="text-sm font-medium underline decoration-ash underline-offset-4 hover:decoration-ink">Go to talent</a>
+        </div>
+      </section>
+    </main>
+    <div id="site-footer"></div>
+    <script src="./assets/cubic.js"></script>
+  </body>
+</html>

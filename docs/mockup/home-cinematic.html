@@ -1,0 +1,365 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cubic Technologies — Home (Cinematic)</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              ink: { DEFAULT: "#1d1d1d", soft: "rgba(29,29,29,0.68)", faint: "rgba(29,29,29,0.45)" },
+              ash: { DEFAULT: "#d9d9d9", light: "#f4f4f4", mid: "#969696" },
+              cta: { DEFAULT: "#d60020", hover: "#e50022" },
+            },
+            fontFamily: {
+              display: ['"Outfit"', "sans-serif"],
+              sans: ['"DM Sans"', "sans-serif"],
+            },
+            letterSpacing: { tightest: "-0.04em" },
+            keyframes: {
+              fadeUp: {
+                "0%": { opacity: "0", transform: "translateY(18px)" },
+                "100%": { opacity: "1", transform: "translateY(0)" },
+              },
+              ken: {
+                "0%": { transform: "scale(1)" },
+                "100%": { transform: "scale(1.04)" },
+              },
+            },
+            animation: {
+              "fade-up": "fadeUp 0.9s ease-out both",
+              "fade-up-delay": "fadeUp 0.9s ease-out 0.16s both",
+              "fade-up-late": "fadeUp 0.9s ease-out 0.32s both",
+              ken: "ken 22s ease-out forwards",
+            },
+          },
+        },
+      };
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,400&family=Outfit:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      html {
+        scroll-behavior: smooth;
+      }
+      .reveal {
+        opacity: 0;
+        transform: translateY(16px);
+        transition: opacity 0.75s cubic-bezier(0.22, 1, 0.36, 1), transform 0.75s cubic-bezier(0.22, 1, 0.36, 1);
+      }
+      .reveal.is-in {
+        opacity: 1;
+        transform: none;
+      }
+      .delay-1 { transition-delay: 0.1s; }
+      .line-grow {
+        display: block;
+        height: 2px;
+        width: 3.5rem;
+        background: #d60020;
+        transform: scaleX(0);
+        transform-origin: left;
+        transition: transform 0.85s cubic-bezier(0.22, 1, 0.36, 1) 0.15s;
+      }
+      .reveal.is-in .line-grow,
+      .hero-copy .line-grow {
+        transform: scaleX(1);
+      }
+      .hero-copy .line-grow {
+        animation: lineIn 0.85s cubic-bezier(0.22, 1, 0.36, 1) 0.45s both;
+      }
+      @keyframes lineIn {
+        from { transform: scaleX(0); }
+        to { transform: scaleX(1); }
+      }
+      .btn {
+        border-radius: 0.55rem;
+        transition: transform 0.25s ease, background-color 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+      }
+      .btn:hover {
+        transform: translateY(-1px);
+      }
+      .btn-fill:hover {
+        box-shadow: 0 10px 24px rgba(214, 0, 32, 0.28);
+      }
+      .site-header {
+        position: sticky;
+        top: 0;
+        z-index: 30;
+        background: rgba(0, 0, 0, 0.35);
+        backdrop-filter: blur(14px);
+        transition: background 0.35s ease, border-color 0.35s ease;
+      }
+      .site-header.is-scrolled {
+        background: rgba(0, 0, 0, 0.72);
+      }
+      .photo-frame {
+        overflow: hidden;
+      }
+      .photo-frame img {
+        transition: transform 8s ease;
+      }
+      .photo-frame:hover img {
+        transform: scale(1.03);
+      }
+      .tile {
+        position: relative;
+        transition: background-color 0.35s ease;
+      }
+      .tile::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 0;
+        height: 2px;
+        width: 0;
+        background: #d60020;
+        transition: width 0.4s ease;
+      }
+      .tile:hover::after {
+        width: 100%;
+      }
+      .list-item {
+        opacity: 0;
+        transform: translateX(-8px);
+        transition: opacity 0.5s ease, transform 0.5s ease;
+      }
+      .reveal.is-in .list-item {
+        opacity: 1;
+        transform: none;
+      }
+      .reveal.is-in .list-item:nth-child(1) { transition-delay: 0.08s; }
+      .reveal.is-in .list-item:nth-child(2) { transition-delay: 0.14s; }
+      .reveal.is-in .list-item:nth-child(3) { transition-delay: 0.2s; }
+      .reveal.is-in .list-item:nth-child(4) { transition-delay: 0.26s; }
+      .reveal.is-in .list-item:nth-child(5) { transition-delay: 0.32s; }
+      @media (prefers-reduced-motion: reduce) {
+        html { scroll-behavior: auto; }
+        .reveal, .list-item, .line-grow, .btn, .tile::after, .photo-frame img, .animate-ken, .animate-fade-up, .animate-fade-up-delay, .animate-fade-up-late {
+          animation: none !important;
+          opacity: 1 !important;
+          transform: none !important;
+          transition: none !important;
+        }
+        .line-grow { transform: scaleX(1) !important; }
+      }
+    </style>
+  </head>
+  <body class="bg-black font-sans text-white antialiased">
+    <p class="bg-black px-6 py-2 text-center text-xs text-white/50">
+      Direction B — Cinematic.
+      <a class="text-white underline decoration-white/30 underline-offset-2 hover:decoration-white" href="./home-editorial.html">Also see Editorial</a>
+      · Mockup only. Other routes after you pick.
+    </p>
+
+    <header class="site-header border-b border-white/10">
+      <div class="mx-auto flex max-w-6xl items-center justify-between gap-6 px-6 py-5">
+        <a href="#top" class="font-display leading-none tracking-tightest" aria-label="Cubic Technologies home">
+          <span class="block text-[15px] font-semibold text-cta">CUBIC</span>
+          <span class="block text-[10px] font-medium uppercase tracking-[0.28em] text-white/50">Technologies</span>
+        </a>
+        <nav class="hidden items-center gap-8 text-[13px] font-medium text-white/70 md:flex" aria-label="Primary">
+          <details class="group relative">
+            <summary class="cursor-pointer list-none marker:content-none">Practices</summary>
+            <div class="absolute left-0 top-full z-20 mt-3 w-64 border border-white/10 bg-ink py-2 text-sm">
+              <a class="block px-4 py-2 hover:bg-white/5" href="#staffing">Software Development Staffing</a>
+              <a class="block px-4 py-2 hover:bg-white/5" href="#built">App + Software Development</a>
+              <a class="block px-4 py-2 hover:bg-white/5" href="#built">Communication Services</a>
+              <a class="block px-4 py-2 hover:bg-white/5" href="#built">Automation &amp; AI</a>
+            </div>
+          </details>
+          <a class="hover:text-white" href="#staffing">Employers</a>
+          <a class="hover:text-white" href="#contact">Talent</a>
+          <a class="hover:text-white" href="#contact">About</a>
+        </nav>
+        <a href="#contact" class="btn btn-fill bg-cta px-4 py-2 text-[13px] font-medium text-white hover:bg-cta-hover">Talk to Cubic</a>
+      </div>
+    </header>
+
+    <main id="top">
+      <section class="relative min-h-[100svh] overflow-hidden bg-[#111111]">
+        <img
+          class="absolute inset-0 h-full w-full object-cover object-center animate-ken"
+          src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&amp;fit=crop&amp;w=2400&amp;q=80"
+          alt=""
+        />
+        <div class="absolute inset-0 bg-gradient-to-r from-black/85 via-black/55 to-black/30"></div>
+        <div class="hero-copy relative mx-auto flex min-h-[100svh] max-w-6xl flex-col justify-center px-6 pb-20 pt-28 md:pt-24">
+          <p class="animate-fade-up mb-6 text-[12px] font-medium uppercase tracking-[0.22em] text-white/50">
+            Dallas · Talent and delivery
+          </p>
+          <h1 class="animate-fade-up-delay font-display max-w-4xl text-5xl font-medium leading-[1.05] tracking-tightest md:text-7xl">
+            Senior people. The work they are trusted to do.
+          </h1>
+          <span class="line-grow mt-8"></span>
+          <p class="animate-fade-up-late mt-8 max-w-xl text-lg leading-relaxed text-white/70">
+            Cubic Technologies staffs highly experienced software specialists and delivers engineering,
+            communications, and automation (including AI where it earns a place) alongside them. We know
+            the work because we do the work.
+          </p>
+          <div class="animate-fade-up-late mt-10 flex flex-wrap gap-3">
+            <a href="#staffing" class="btn btn-fill bg-cta px-6 py-3 text-sm font-medium text-white hover:bg-cta-hover">Hire senior talent</a>
+            <a href="#contact" class="btn border border-white/25 px-6 py-3 text-sm font-medium text-white hover:border-white">I’m a candidate</a>
+          </div>
+        </div>
+      </section>
+
+      <section id="staffing" class="relative overflow-hidden bg-ink">
+        <div class="mx-auto grid max-w-6xl items-stretch gap-0 md:grid-cols-2">
+          <div class="photo-frame min-h-[28rem] md:min-h-full">
+            <img
+              class="h-full w-full object-cover"
+              src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&amp;fit=crop&amp;w=1600&amp;q=80"
+              alt=""
+            />
+          </div>
+          <div class="reveal px-6 py-20 md:px-12 md:py-28">
+            <p class="text-[12px] font-medium uppercase tracking-[0.22em] text-white/40">Lead offer</p>
+            <h2 class="font-display mt-4 text-3xl font-medium tracking-tightest md:text-4xl">
+              Talent you would hire yourself, if you had six more months.
+            </h2>
+            <span class="line-grow mt-6"></span>
+            <p class="mt-6 text-base leading-relaxed text-white/65">
+              Cubic builds a high-caliber pool, screens for craft and character, and walks candidates
+              through interviews with you. You meet fewer people. You meet the right ones.
+            </p>
+            <ul class="mt-10 space-y-3 text-[15px] text-white/85">
+              <li class="list-item">High-caliber talent pool</li>
+              <li class="list-item">Screened for depth, not keyword match</li>
+              <li class="list-item">People who can ship with modern AI tooling without handing the job to the model</li>
+              <li class="list-item">Interviews that respect your time and theirs</li>
+              <li class="list-item">Hand-selected shortlists, not a blast of résumés</li>
+            </ul>
+            <a class="mt-10 inline-block text-sm font-medium text-white underline decoration-white/30 underline-offset-4 hover:decoration-cta" href="#contact"
+              >Software Development Staffing</a
+            >
+          </div>
+        </div>
+      </section>
+
+      <section id="built" class="bg-black">
+        <div class="mx-auto max-w-6xl px-6 py-24 md:py-32">
+          <h2 class="reveal font-display max-w-2xl text-3xl font-medium tracking-tightest md:text-4xl">
+            When you need the work built, not only the seat filled.
+          </h2>
+          <div class="reveal delay-1 mt-16 grid gap-px bg-white/10 md:grid-cols-3">
+            <a class="tile group bg-black p-8 hover:bg-ink" href="#contact">
+              <p class="font-display text-xl font-medium tracking-tight">App + Software Development</p>
+              <p class="mt-4 text-sm leading-relaxed text-white/55 group-hover:text-white/80">
+                Product, engineering, and applied AI that has an owner and a rollback.
+              </p>
+            </a>
+            <a class="tile group bg-black p-8 hover:bg-ink" href="#contact">
+              <p class="font-display text-xl font-medium tracking-tight">Communication Services</p>
+              <p class="mt-4 text-sm leading-relaxed text-white/55 group-hover:text-white/80">
+                Voice, routing, and assist that follow your rules, not a generic bot.
+              </p>
+            </a>
+            <a class="tile group bg-black p-8 hover:bg-ink" href="#contact">
+              <p class="font-display text-xl font-medium tracking-tight">Automation &amp; AI</p>
+              <p class="mt-4 text-sm leading-relaxed text-white/55 group-hover:text-white/80">
+                RPA, workflow, and supervised AI on messy work. People keep judgment.
+              </p>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <section id="quote" class="relative overflow-hidden">
+        <img
+          class="absolute inset-0 h-full w-full object-cover opacity-30"
+          src="https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&amp;fit=crop&amp;w=2000&amp;q=80"
+          alt=""
+        />
+        <div class="absolute inset-0 bg-ink/80"></div>
+        <div class="reveal relative mx-auto max-w-3xl px-6 py-28 md:py-36">
+          <span class="line-grow mb-8"></span>
+          <blockquote class="font-display text-2xl font-normal leading-snug tracking-tight md:text-3xl">
+            “As an agency, it is imperative to build relationships with partners that can deliver custom
+            digital solutions effectively and efficiently. Cubic Technologies is our go-to partner for
+            application and software development.”
+          </blockquote>
+          <p class="mt-10 text-sm text-white/55">Joseph Alexander, The Uptown Agency</p>
+        </div>
+      </section>
+
+      <section id="contact" class="bg-cta">
+        <div class="reveal mx-auto max-w-6xl px-6 py-24 md:py-32">
+          <h2 class="font-display max-w-xl text-3xl font-medium tracking-tightest md:text-5xl">
+            Tell us what you are trying to staff or ship.
+          </h2>
+          <a href="#contact" class="btn mt-10 inline-block bg-white px-6 py-3 text-sm font-medium text-ink hover:bg-ash-light">Talk to Cubic</a>
+          <p class="mt-8 max-w-md text-sm text-white/75">
+            Form comes after you pick a direction. This mock does not send mail.
+          </p>
+        </div>
+      </section>
+    </main>
+
+    <footer class="bg-black text-sm text-white/50">
+      <div class="mx-auto grid max-w-6xl gap-12 px-6 py-16 md:grid-cols-3">
+        <div>
+          <p class="font-display text-[15px] font-semibold tracking-tightest text-white">CUBIC</p>
+          <p class="mt-4">1212 Corporate Dr #260<br />Dallas, TX 75038</p>
+        </div>
+        <div class="space-y-2">
+          <p>(972) 954-9001</p>
+          <p>Recruiting (469) 439-0087</p>
+          <p>info@cubicit.net</p>
+          <p>contact@cubicit.net</p>
+        </div>
+        <div class="flex flex-col gap-2">
+          <a class="hover:text-white" href="#staffing">Staffing</a>
+          <a class="hover:text-white" href="#built">Software</a>
+          <a class="hover:text-white" href="#built">Communications</a>
+          <a class="hover:text-white" href="#built">Automation &amp; AI</a>
+          <a class="hover:text-white" href="#staffing">Employers</a>
+          <a class="hover:text-white" href="#contact">Talent</a>
+          <a class="hover:text-white" href="#contact">About</a>
+          <a class="hover:text-white" href="#contact">Contact</a>
+        </div>
+      </div>
+      <p class="mx-auto max-w-6xl px-6 pb-10 text-xs text-white/30">Copyright © 2024 | CUBIC Technologies LLC.</p>
+    </footer>
+    <script>
+      (function () {
+        var header = document.querySelector(".site-header");
+        var onScroll = function () {
+          if (header) header.classList.toggle("is-scrolled", window.scrollY > 8);
+        };
+        onScroll();
+        window.addEventListener("scroll", onScroll, { passive: true });
+        if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+          document.querySelectorAll(".reveal").forEach(function (el) { el.classList.add("is-in"); });
+          return;
+        }
+        var io = new IntersectionObserver(
+          function (entries) {
+            entries.forEach(function (entry) {
+              if (entry.isIntersecting) {
+                entry.target.classList.add("is-in");
+                io.unobserve(entry.target);
+              }
+            });
+          },
+          { threshold: 0.14, rootMargin: "0px 0px -8% 0px" }
+        );
+        document.querySelectorAll(".reveal").forEach(function (el) {
+          io.observe(el);
+          var r = el.getBoundingClientRect();
+          if (r.top < window.innerHeight * 0.92 && r.bottom > 0) {
+            el.classList.add("is-in");
+            io.unobserve(el);
+          }
+        });
+      })();
+    </script>
+  </body>
+</html>
