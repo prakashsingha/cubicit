@@ -61,7 +61,7 @@
       '<span class="block text-[15px] font-semibold text-cta">CUBIC</span>' +
       '<span class="block text-[10px] font-medium uppercase tracking-[0.28em] text-ink-faint">Technologies</span>' +
       "</a>" +
-      '<nav class="hidden items-center gap-8 text-[13px] font-medium text-ink-soft md:flex" aria-label="Primary">' +
+      '<nav class="header-nav hidden items-center gap-10 text-[15px] font-medium text-ink-soft md:flex" aria-label="Primary">' +
       '<button type="button" class="practices-toggle' + (onPractice ? " is-current" : "") + '" aria-expanded="false" aria-controls="practices-panel">Services</button>' +
       '<a class="hover:text-ink" href="employers.html"' + is("employers") + ">Employers</a>" +
       '<a class="hover:text-ink" href="talent.html"' + is("talent") + ">Talent</a>" +
@@ -81,7 +81,7 @@
       '<a class="header-menu-cta btn btn-fill mx-4 my-3 inline-block bg-cta px-4 py-2 text-[13px] font-medium text-white hover:bg-cta-hover" href="contact.html"' +
       is("contact") + ">Talk to Cubic</a>" +
       "</div></details>" +
-      '<a href="contact.html" class="header-cta btn btn-fill bg-cta px-4 py-2 text-[13px] font-medium text-white hover:bg-cta-hover"' +
+      '<a href="contact.html" class="header-cta btn btn-fill bg-cta px-5 py-2.5 text-[14px] font-medium text-white hover:bg-cta-hover"' +
       is("contact") + ">Talk to Cubic</a>" +
       "</div>" +
       '<div id="practices-panel" class="practices-panel" hidden>' +
