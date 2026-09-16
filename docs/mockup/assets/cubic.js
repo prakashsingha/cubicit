@@ -51,16 +51,6 @@
       "Circuit board close-up." + placeholder
     );
 
-  var banner = document.getElementById("site-banner");
-  if (banner) {
-    banner.outerHTML =
-      '<p class="border-b border-ash bg-ash-light px-6 py-2 text-center text-xs text-ink-soft">' +
-      "Editorial v1 mockup. " +
-      '<a class="underline decoration-ink/20 underline-offset-2 hover:text-ink" href="./home-cinematic.html">Cinematic archive</a>.' +
-      " Forms do not send mail." +
-      "</p>";
-  }
-
   var header = document.getElementById("site-header");
   if (header) {
     header.outerHTML =
@@ -95,8 +85,7 @@
       "</div>" +
       '<div id="practices-panel" class="practices-panel" hidden>' +
       '<div class="practices-grid">' + cards + "</div>" +
-      '<div class="mt-3 flex items-center justify-between gap-4 px-1">' +
-      '<p class="text-[11px] text-ink-faint">Placeholder photographs. Replace with Cubic work, with consent.</p>' +
+      '<div class="mt-3 flex items-center justify-end px-1">' +
       '<a class="text-[13px] font-medium text-ink underline decoration-ash underline-offset-4 hover:decoration-ink"' +
       is("practices") + ' href="./practices.html">All practices</a>' +
       "</div></div></div></header>";
