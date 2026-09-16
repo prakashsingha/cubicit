@@ -56,7 +56,7 @@
     header.outerHTML =
       '<header class="site-header border-b border-ash/70">' +
       '<div class="header-inner relative mx-auto max-w-6xl px-6 py-5">' +
-      '<div class="flex items-center justify-between gap-6">' +
+      '<div class="header-bar">' +
       '<a href="./index.html" class="font-display leading-none tracking-tightest" aria-label="Cubic Technologies home">' +
       '<span class="block text-[15px] font-semibold text-cta">CUBIC</span>' +
       '<span class="block text-[10px] font-medium uppercase tracking-[0.28em] text-ink-faint">Technologies</span>' +
@@ -67,9 +67,9 @@
       '<a class="hover:text-ink" href="./talent.html"' + is("talent") + ">Talent</a>" +
       '<a class="hover:text-ink" href="./about.html"' + is("about") + ">About</a>" +
       "</nav>" +
-      '<details class="md:hidden">' +
-      '<summary class="cursor-pointer list-none text-[13px] font-medium">Menu</summary>' +
-      '<div class="absolute right-6 z-30 mt-3 w-64 border border-ash bg-white py-2 text-sm shadow-sm">' +
+      '<details class="header-menu md:hidden">' +
+      '<summary class="header-menu-toggle">Menu</summary>' +
+      '<div class="header-menu-panel">' +
       '<a class="block px-4 py-2" href="./practices.html">All practices</a>' +
       '<a class="block px-4 py-2" href="./staffing.html">Staffing</a>' +
       '<a class="block px-4 py-2" href="./software.html">Software</a>' +
@@ -78,9 +78,10 @@
       '<a class="block px-4 py-2" href="./employers.html">Employers</a>' +
       '<a class="block px-4 py-2" href="./talent.html">Talent</a>' +
       '<a class="block px-4 py-2" href="./about.html">About</a>' +
-      '<a class="block px-4 py-2" href="./contact.html">Contact</a>' +
+      '<a class="header-menu-cta btn btn-fill mx-4 my-3 inline-block bg-cta px-4 py-2 text-[13px] font-medium text-white hover:bg-cta-hover" href="./contact.html"' +
+      is("contact") + ">Talk to Cubic</a>" +
       "</div></details>" +
-      '<a href="./contact.html" class="btn btn-fill bg-cta px-4 py-2 text-[13px] font-medium text-white hover:bg-cta-hover"' +
+      '<a href="./contact.html" class="header-cta btn btn-fill bg-cta px-4 py-2 text-[13px] font-medium text-white hover:bg-cta-hover"' +
       is("contact") + ">Talk to Cubic</a>" +
       "</div>" +
       '<div id="practices-panel" class="practices-panel" hidden>' +
@@ -95,21 +96,24 @@
   if (footer) {
     footer.outerHTML =
       '<footer class="border-t border-white/10 bg-ink text-sm text-white/55">' +
-      '<div class="mx-auto grid max-w-6xl gap-12 px-6 py-16 md:grid-cols-3">' +
+      '<div class="site-footer-grid mx-auto max-w-6xl px-6 py-16">' +
       "<div><p class=\"font-display text-[15px] font-semibold tracking-tightest text-white\">CUBIC</p>" +
       "<p class=\"mt-4\">1212 Corporate Dr #260<br />Dallas, TX 75038</p></div>" +
-      "<div class=\"space-y-2\"><p>(972) 954-9001</p><p>Recruiting (469) 439-0087</p>" +
+      "<div class=\"site-footer-contact space-y-2\"><p>(972) 954-9001</p><p class=\"site-footer-recruiting\">Recruiting <span>(469) 439-0087</span></p>" +
       "<p>info@cubicit.net</p><p>contact@cubicit.net</p></div>" +
+      '<div class="site-footer-links">' +
       '<div class="flex flex-col gap-2">' +
       '<a class="hover:text-white" href="./staffing.html">Staffing</a>' +
       '<a class="hover:text-white" href="./software.html">Software</a>' +
       '<a class="hover:text-white" href="./communication.html">Communications</a>' +
       '<a class="hover:text-white" href="./automation.html">Automation &amp; AI</a>' +
+      "</div>" +
+      '<div class="flex flex-col gap-2">' +
       '<a class="hover:text-white" href="./employers.html">Employers</a>' +
       '<a class="hover:text-white" href="./talent.html">Talent</a>' +
       '<a class="hover:text-white" href="./about.html">About</a>' +
       '<a class="hover:text-white" href="./contact.html">Contact</a>' +
-      "</div></div>" +
+      "</div></div></div>" +
       '<p class="mx-auto max-w-6xl px-6 pb-10 text-xs text-white/35">Copyright © 2024 | CUBIC Technologies LLC.</p>' +
       "</footer>";
   }
@@ -153,6 +157,18 @@
     });
     document.addEventListener("keydown", function (e) {
       if (e.key === "Escape") setOpen(false);
+    });
+  }
+
+  var menu = document.querySelector(".header-menu");
+  if (menu) {
+    document.addEventListener("click", function (e) {
+      if (!menu.open) return;
+      if (menu.contains(e.target)) return;
+      menu.removeAttribute("open");
+    });
+    document.addEventListener("keydown", function (e) {
+      if (e.key === "Escape") menu.removeAttribute("open");
     });
   }
 
